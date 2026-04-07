@@ -14,7 +14,7 @@
                     <a href="cadastrar.php">Cadastrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="CAMINHO">TEXTO</a>
+                    <a class="nav-link" href=""></a>
                 </li>
             <?php } ?>
 
