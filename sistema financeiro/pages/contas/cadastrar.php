@@ -1,34 +1,46 @@
 <?php
-include "../config/config.php";
-include "../data/dados.php";
-include "../includes/auth.php";
+include "../../config/config.php";
+include "../../data/dados.php";
+include "../../includes/auth.php";
 
-if ($_SESSION["perfil"] === "cliente") {
+if ($_SESSION["perfil"] == "cliente") {
     header("Location: listar.php");
     exit;
 }
 
-$erro    = "";
+$erro = "";
 $sucesso = "";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $descricao = trim($_POST["descricao"] ?? "");
-    $valor     = $_POST["valor"] ?? "";
-    $tipo      = $_POST["tipo"] ?? "";
-
-    if ($descricao === "" || $valor === "" || !in_array($tipo, ["Receber", "Pagar"])) {
+if ($_POST) {
+    $descricao = trim($_POST["descricao"]);
+    $valor = $_POST["valor"];
+    $tipo = $_POST["tipo"];
+    
+    $valorNumerico = (float)$valor;
+    
+    if ($descricao == "" || $valor == "" || ($tipo != "Receber" && $tipo != "Pagar")) {
         $erro = "Preencha todos os campos corretamente.";
-    } elseif (!is_numeric($valor) || (float)$valor <= 0) {
-        $erro = "O valor deve ser um número positivo.";
+    } elseif ($valorNumerico <= 0) {
+        $erro = "O valor deve ser um numero positivo.";
     } else {
-        adicionarConta($descricao, (float)$valor, $tipo);
+        $novaConta = [
+            "id" => $_SESSION["proximo_id"],
+            "descricao" => $descricao,
+            "valor" => $valorNumerico,
+            "tipo" => $tipo,
+            "usuario" => $_SESSION["usuario"]
+        ];
+        
+        $_SESSION["contas"][] = $novaConta;
+        $_SESSION["proximo_id"] = $_SESSION["proximo_id"] + 1;
+        
         $sucesso = "Conta cadastrada com sucesso!";
     }
 }
 ?>
 
-<?php include "../includes/header.php"; ?>
-<?php include "../includes/menu.php"; ?>
+<?php include "../../includes/header.php"; ?>
+<?php include "../../includes/menu.php"; ?>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -36,52 +48,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2 class="mb-0">Nova Conta</h2>
-                <a href="listar.php" class="btn btn-secondary">← Voltar</a>
+                <a href="listar.php" class="btn btn-secondary">Voltar</a>
             </div>
 
-            <?php if ($erro): ?>
-                <div class="alert alert-danger"><?php echo htmlspecialchars($erro); ?></div>
-            <?php endif; ?>
+            <?php if ($erro) { ?>
+                <div class="alert alert-danger"><?php echo $erro; ?></div>
+            <?php } ?>
 
-            <?php if ($sucesso): ?>
+            <?php if ($sucesso) { ?>
                 <div class="alert alert-success">
                     <?php echo $sucesso; ?>
                     <a href="listar.php" class="alert-link ms-2">Ver lista</a>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
 
             <div class="card shadow-sm">
                 <div class="card-body">
                     <form method="post">
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Descrição</label>
-                            <input type="text" name="descricao" class="form-control"
-                                   value="<?php echo htmlspecialchars($_POST['descricao'] ?? ''); ?>"
-                                   placeholder="Ex: Aluguel, Mensalidade..." required>
+                            <label class="form-label fw-semibold">Descricao</label>
+                            <input type="text" name="descricao" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Valor (R$)</label>
-                            <input type="number" name="valor" class="form-control" step="0.01" min="0.01"
-                                   value="<?php echo htmlspecialchars($_POST['valor'] ?? ''); ?>"
-                                   placeholder="0,00" required>
+                            <input type="number" name="valor" class="form-control" step="0.01" min="0.01" placeholder="0,00" required>
                         </div>
 
                         <div class="mb-4">
                             <label class="form-label fw-semibold">Tipo</label>
                             <div class="d-flex gap-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tipo" value="Receber" id="receber"
-                                        <?php echo (($_POST['tipo'] ?? '') === 'Receber') ? 'checked' : ''; ?>>
+                                    <input class="form-check-input" type="radio" name="tipo" value="Receber" id="receber" checked>
                                     <label class="form-check-label text-success fw-semibold" for="receber">
-                                        ✔ Receber
+                                        Receber
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tipo" value="Pagar" id="pagar"
-                                        <?php echo (($_POST['tipo'] ?? '') === 'Pagar') ? 'checked' : ''; ?>>
+                                    <input class="form-check-input" type="radio" name="tipo" value="Pagar" id="pagar">
                                     <label class="form-check-label text-danger fw-semibold" for="pagar">
-                                        ✖ Pagar
+                                        Pagar
                                     </label>
                                 </div>
                             </div>
@@ -96,4 +102,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 </div>
 
-<?php include "../includes/footer.php"; ?>
+<?php include "../../includes/footer.php"; ?>
