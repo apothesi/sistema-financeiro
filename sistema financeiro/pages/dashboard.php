@@ -63,10 +63,6 @@ $saldo = $totalReceber - $totalPagar;
             </div>
         </div>
     </div>
-
-    <div class="mt-4">
-        <a href="contas/listar.php" class="btn btn-outline-dark">Ver todas as contas</a>
-    </div>
 </div>
 
 <?php include "../includes/footer.php"; ?>
