@@ -1,100 +1,118 @@
-AULA 01 - EXERCICIO 1: Alunos
+AULA 01 - EXERCICIO 1: Array com 5 nomes de alunos
 
 $alunos = [
-    [
-        "nome" => "Murilo",
-        "sobrenome" => "Souza Targa"
-    ],   
-    [
-        "nome" => "Miguel",
-        "sobrenome" => "Luz"
-    ],
-    [
-        "nome" => "Ryan",
-        "sobrenome" => "Gosling"
-    ],
-    [
-        "nome" => "Albert",
-        "sobrenome" => "Einstein"
-    ],
-    [
-        "nome" => "Nikola",
-        "sobrenome" => "Tesla"
-    ]
+    "Ana",
+    "Bruno",
+    "Carlos",
+    "Daniela",
+    "Eduardo"
 ];
 
-foreach ($alunos as $aluno) { 
-    echo "Nome: " . $aluno["nome"] . "<br>";
-    echo "Sobrenome: " . $aluno["sobrenome"] . "<br>"; 
-    echo "<hr>"; 
-}
+echo "Primeiro nome: " . $alunos[0] . "<br>";
+echo "Ultimo nome: " . $alunos[4] . "<br>";
 
 
-
-AULA 01 - EXERCICIO 2: Produto
+AULA 01 - EXERCICIO 2: Array associativo produto
 
 $produto = [
-    "nome" => "Frutas",
-    "preco" => 20,
-    "quantidade" => 20
+    "nome" => "Notebook",
+    "preco" => 3500.00,
+    "quantidade" => 10
 ];
 
-echo "Produto: " . $produto["nome"] . "<br>";
-echo "Preco: " . $produto["preco"] . "<br>";
-echo "Quantidade: " . $produto["quantidade"] . "<br>";
+echo "Nome: " . $produto["nome"] . "<br>";
+echo "Preco: R$ " . $produto["preco"] . "<br>";
 
 
-
-AULA 01 - EXERCICIO 3: Clientes
-
+AULA 01 - EXERCICIO 3: Array multidimensional com 3 clientes
 
 $clientes = [
     [
         "id" => 1,
-        "nome" => "cliente",
-        "saldo" => 150.00
+        "nome" => "Joao Silva",
+        "saldo" => 1500.00
     ],
     [
         "id" => 2,
-        "nome" => "cliente2",
-        "saldo" => 200.00
+        "nome" => "Maria Santos",
+        "saldo" => 2300.50
     ],
     [
         "id" => 3,
-        "nome" => "cliente3",
-        "saldo" => 50.00
+        "nome" => "Pedro Oliveira",
+        "saldo" => 890.00
     ]
 ];
 
-foreach ($clientes as $cliente) {
-    echo "ID: " . $cliente["id"] . "<br>";
-    echo "Nome: " . $cliente["nome"] . "<br>";
-    echo "Saldo: R$ " . $cliente["saldo"] . "<br>";
-    echo "<hr>";
-}
 
+AULA 01 - DESAFIO 1: Criar array usuarios para login
 
-
-AULA 02 - EXERCICIO 1: Cidades
-
-
-$cidades = [
-    "Marilia",
-    "Bauru",
-    "Jau",
-    "Ourinhos",
-    "Pompeia"
+$usuarios = [
+    [
+        "usuario" => "joao",
+        "senha" => "123456",
+        "perfil" => "cliente"
+    ],
+    [
+        "usuario" => "maria",
+        "senha" => "abc123",
+        "perfil" => "empresa"
+    ],
+    [
+        "usuario" => "admin",
+        "senha" => "admin123",
+        "perfil" => "proprietario"
+    ]
 ];
 
-foreach ($cidades as $cidade) { 
-    echo "Cidade: " . $cidade . "<br>";
-    echo "<hr>"; 
+
+AULA 01 - DESAFIO 2: Criar array contas
+
+$contas = [
+    [
+        "descricao" => "Mensalidade escolar",
+        "valor" => 850.00,
+        "tipo" => "Pagar"
+    ],
+    [
+        "descricao" => "Salario",
+        "valor" => 2500.00,
+        "tipo" => "Receber"
+    ],
+    [
+        "descricao" => "Conta de luz",
+        "valor" => 150.00,
+        "tipo" => "Pagar"
+    ],
+    [
+        "descricao" => "Bico de Pedreiro",
+        "valor" => 600.00,
+        "tipo" => "Receber"
+    ],
+    [
+        "descricao" => "Internet",
+        "valor" => 99.90,
+        "tipo" => "Pagar"
+    ]
+];
+
+
+AULA 02 - EXERCICIO 1: Array com 5 cidades e foreach
+
+$cidades = [
+    "Sao Paulo",
+    "Rio de Janeiro",
+    "Belo Horizonte",
+    "Curitiba",
+    "Salvador"
+];
+
+foreach ($cidades as $cidade) {
+    echo $cidade . "<br>";
 }
 
 
-
-AULA 02 - EXERCICIO 2: Aluno
-
+AULA 02 - EXERCICIO 2: Array associativo com foreach
 
 $aluno = [
     "nome" => "Murilo",
@@ -107,57 +125,272 @@ foreach ($aluno as $campo => $valor) {
 }
 
 
-
-AULA 02 - EXERCICIO 3: Produtos
-
+AULA 02 - EXERCICIO 3: Array multidimensional com 3 produtos
 
 $produtos = [
     [
-        "nome" => "Kit talher",
-        "preco" => 49.99,
-        "quantidade" => 15
+        "nome" => "Mouse",
+        "preco" => 45.90
     ],
     [
-        "nome" => "Carregador Portatil",
-        "preco" => 29.99,
-        "quantidade" => 10 
+        "nome" => "Teclado",
+        "preco" => 89.90
     ],
     [
-        "nome" => "Geladeira Eletrolux",
-        "preco" => 1499.99,
-        "quantidade" => 5
+        "nome" => "Monitor",
+        "preco" => 750.00
     ]
 ];
 
 foreach ($produtos as $produto) {
     echo "Nome: " . $produto["nome"] . "<br>";
-    echo "Preco: " . $produto["preco"] . "<br>";
-    echo "Quantidade: " . $produto["quantidade"] . "<br>";
+    echo "Preco: R$ " . $produto["preco"] . "<br>";
     echo "<hr>";
 }
 
 
+AULA 02 - DESAFIO 1: Listar usuarios e perfis
 
-AULA 03 - EXERCICIO 1: Organizacao de pastas
+foreach ($usuarios as $user) {
+    echo "Usuario: " . $user["usuario"] . "<br>";
+    echo "Perfil: " . $user["perfil"] . "<br>";
+    echo "<hr>";
+}
 
 
+AULA 02 - DESAFIO 2: Listar apenas contas do tipo Receber
 
-Organizar as pastas permite uma navegacao melhor entre o projeto 
-e deixa mais limpo visualmente.
+foreach ($contas as $conta) {
+    if ($conta["tipo"] == "Receber") {
+        echo "Descricao: " . $conta["descricao"] . "<br>";
+        echo "Valor: R$ " . $conta["valor"] . "<br>";
+        echo "Tipo: " . $conta["tipo"] . "<br>";
+        echo "<hr>";
+    }
+}
 
 
+AULA 03 - EXERCICIO 1: Importancia de organizar pastas
+
+Organizar as pastas permite uma navegacao melhor entre o projeto e deixa mais limpo visualmente. Facilita a manutencao e o trabalho em equipe.
+
+
+AULA 03 - EXERCICIO 2: Estrutura de pastas para sistema de cadastro de alunos
+
+sistema-alunos/
+├── index.php
+├── login.php
+├── logout.php
+├── config/
+│   └── config.php
+├── data/
+│   └── dados.php
+├── includes/
+│   ├── header.php
+│   ├── menu.php
+│   ├── footer.php
+│   └── auth.php
+└── pages/
+    ├── dashboard.php
+    └── alunos/
+        ├── listar.php
+        ├── cadastrar.php
+        ├── editar.php
+        └── excluir.php
 
 
 AULA 03 - EXERCICIO 3: Funcao das pastas
 
+A pasta data guarda o arquivo dados.php onde ele guarda os dados dos clientes, alunos, produtos, etc.
+
+A pasta includes guarda arquivos como header.php, footer.php onde eh para INCLUIR nos codigos e organizar melhor, sao codigos inclusos que sao separados do index.php para melhor organizacao.
+
+A pasta pages guarda arquivos como dashboard.php, que simplificando ela serve pra guardar as outras paginas do projeto.
 
 
-A pasta data guarda o arquivo dados.php onde ele guarda os dados 
-dos clientes, alunos, produtos, etc.
+AULA 03 - DESAFIO 1: Criar estrutura de pastas no computador
 
-A pasta includes guarda arquivos como header.php, footer.php onde 
-é para INCLUIR nos codigos e organizar melhor, sao codigos 
-inclusos que sao separados do index.php para melhor organizacao.
+Criar todas as pastas e arquivos vazios com os nomes corretos conforme a estrutura acima.
 
-A pasta pages guarda arquivos como dashboard.php, que simplificando 
-ela serve pra guardar as outras paginas do projeto.
+
+AULA 03 - DESAFIO 2: Criar header.php com Bootstrap
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Alunos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+AULA 04 - EXERCICIO 1: O que é uma sessao em PHP
+
+Uma sessao é uma forma do servidor lembrar quem eh o usuario enquanto ele navega pelo sistema. Sem sessao, cada pagina esquece o usuario. Com sessao, o sistema sabe quem esta logado e controla o acesso.
+
+
+AULA 04 - EXERCICIO 2: Acessar pagina protegida sem login
+
+Se acessarmos uma pagina protegida sem estar logado, somos redirecionados para a pagina de login. O arquivo auth.php verifica se existe $_SESSION["usuario"] e se nao existir, manda para login.php.
+
+
+AULA 04 - EXERCICIO 3: Array com 2 usuarios
+
+$usuarios = [
+    [
+        "usuario" => "joao",
+        "senha" => "123",
+        "perfil" => "cliente"
+    ],
+    [
+        "usuario" => "maria",
+        "senha" => "456",
+        "perfil" => "empresa"
+    ]
+];
+
+
+AULA 04 - DESAFIO 1: Mostrar nome do usuario no dashboard
+
+No arquivo dashboard.php, adicionar:
+
+<h1>Bem-vindo, <?php echo $_SESSION["usuario"]; ?>!</h1>
+
+
+AULA 04 - DESAFIO 2: Mostrar mensagem por perfil
+
+<?php
+if ($_SESSION["perfil"] == "cliente") {
+    echo "<h2>Area do Cliente</h2>";
+} elseif ($_SESSION["perfil"] == "empresa") {
+    echo "<h2>Area da Empresa</h2>";
+}
+?>
+
+
+AULA 05 - EXERCICIO 1: O que é perfil de usuario
+
+Perfil de usuario é o nivel de acesso que cada pessoa tem no sistema. No codigo tem tres perfis: cliente (so ve suas contas), empresa (cadastra e gerencia contas) e proprietario (acesso total). Cada perfil define o que o usuario pode fazer e ver no sistema.
+
+
+AULA 05 - EXERCICIO 2: Diferenca entre controle logico e controle visual
+
+Controle logico impede o acesso direto a paginas usando o auth.php. Mesmo que o usuario tente digitar o link na barra de endereco, ele é barrado e mandado para o login.
+
+Controle visual mostra ou esconde os menus e botoes na tela. Evita confusao do usuario e deixa o sistema mais organizado. Por exemplo, o cliente nao ve o botao de cadastrar conta.
+
+
+AULA 05 - EXERCICIO 3: Menu simples por perfil
+
+<?php
+$perfil = $_SESSION["perfil"];
+?>
+
+<nav>
+    <a href="dashboard.php">Dashboard</a>
+    
+    <?php if ($perfil == "cliente") { ?>
+        <a href="contas.php">Area do Cliente</a>
+    <?php } ?>
+    
+    <?php if ($perfil == "proprietario") { ?>
+        <a href="admin.php">Area Administrativa</a>
+    <?php } ?>
+    
+    <a href="logout.php">Sair</a>
+</nav>
+
+
+AULA 05 - DESAFIO 1: Mostrar nome do usuario no menu
+
+<nav>
+    <span>Usuario: <?php echo $_SESSION["usuario"]; ?></span>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="logout.php">Sair</a>
+</nav>
+
+
+AULA 05 - DESAFIO 2: Novo perfil financeiro
+
+<?php
+$perfil = $_SESSION["perfil"];
+?>
+
+<nav>
+    <a href="dashboard.php">Dashboard</a>
+    
+    <?php if ($perfil == "financeiro") { ?>
+        <a href="relatorios.php">Relatorios</a>
+    <?php } ?>
+    
+    <a href="logout.php">Sair</a>
+</nav>
+
+No array de usuarios, adicionar:
+
+[
+    "usuario" => "fin",
+    "senha" => "123",
+    "perfil" => "financeiro"
+]
+
+
+AULA 06 - EXERCICIO 1: O que eh Bootstrap
+
+Bootstrap é um framework front-end que ajuda a criar a parte visual do sistema. Ele deixa as paginas bonitas, organiza o layout e cria sites responsivos que funcionam no computador e no celular. Usamos ele via CDN, que é um link na internet que carrega o Bootstrap sem precisar baixar nada.
+
+
+AULA 06 - EXERCICIO 2: Botoes Bootstrap verde e vermelho
+
+<button class="btn btn-success">Botao Verde</button>
+<button class="btn btn-danger">Botao Vermelho</button>
+
+
+AULA 06 - EXERCICIO 3: Formulario Bootstrap
+
+<form>
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+AULA 06 - DESAFIO 1: Tabela Bootstrap
+
+<table class="table table-bordered table-striped">
+    <head class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+        </tr>
+    </head>
+    <body>
+        <tr>
+            <td>Mensalidade</td>
+            <td>R$ 200,00</td>
+            <td>Receber</td>
+        </tr>
+        <tr>
+            <td>Conta de Luz</td>
+            <td>R$ 120,00</td>
+            <td>Pagar</td>
+        </tr>
+    </body>
+</table>
+
+
+AULA 06 - DESAFIO 2: Card com saldo
+
+<div class="card text-bg-primary" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Saldo Atual</h5>
+        <p class="card-text fs-3">R$ 1.500,00</p>
+    </div>
+</div>
