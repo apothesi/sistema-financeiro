@@ -1,4 +1,4 @@
-1.   
+AULA 01 - EXERCICIO 1: Alunos
 
 $alunos = [
     [
@@ -20,132 +20,144 @@ $alunos = [
     [
         "nome" => "Nikola",
         "sobrenome" => "Tesla"
-    ];
-
-    foreach ($aluno as $aluno) { 
-    echo "Nome: " . $aluno["nome"] . "<br>";
-    echo "Segundo nome: " . $aluno["sobrenome"] . "<br>"; 
-    echo "<hr>"; 
-} 
-
-
-2.
-
-$produto = [
-    [
-        "nome" => "Frutas",
-        "preco" => 20,
-        "quantidade" => "20"
-    ];
-
-    echo "Produto: " . $produto["nome"] . "<br>";
-    echo "Preço : " . $produto["preco"] . "<br>";
-    echo "Quantidade: " . $produto["quantidade"] "<br>";
-
-3.
-
-<?php
-$clientes = [
-    [
-        "nome" => "cliente",
-        "senha" => "123",
-        "id" => "1"
-    ],
-    [
-        "nome" => "cliente2",
-        "senha" => "1234",
-        "id" => "2"
-    ],
-    [
-        "nome" => "cliente3",
-        "senha" => "12345",
-        "id" => "3"
     ]
 ];
 
-?>
+foreach ($alunos as $aluno) { 
+    echo "Nome: " . $aluno["nome"] . "<br>";
+    echo "Sobrenome: " . $aluno["sobrenome"] . "<br>"; 
+    echo "<hr>"; 
+}
 
 
-Aula - 02
 
-1.
+AULA 01 - EXERCICIO 2: Produto
+
+$produto = [
+    "nome" => "Frutas",
+    "preco" => 20,
+    "quantidade" => 20
+];
+
+echo "Produto: " . $produto["nome"] . "<br>";
+echo "Preco: " . $produto["preco"] . "<br>";
+echo "Quantidade: " . $produto["quantidade"] . "<br>";
+
+
+
+AULA 01 - EXERCICIO 3: Clientes
+
+
+$clientes = [
+    [
+        "id" => 1,
+        "nome" => "cliente",
+        "saldo" => 150.00
+    ],
+    [
+        "id" => 2,
+        "nome" => "cliente2",
+        "saldo" => 200.00
+    ],
+    [
+        "id" => 3,
+        "nome" => "cliente3",
+        "saldo" => 50.00
+    ]
+];
+
+foreach ($clientes as $cliente) {
+    echo "ID: " . $cliente["id"] . "<br>";
+    echo "Nome: " . $cliente["nome"] . "<br>";
+    echo "Saldo: R$ " . $cliente["saldo"] . "<br>";
+    echo "<hr>";
+}
+
+
+
+AULA 02 - EXERCICIO 1: Cidades
 
 
 $cidades = [
-    [
-        "nome" => "Márilia",
-    ],   
-    [
-        "nome" => "Bauru",
-    ],
-    [
-        "nome" => "Jáu",
-    ],
-    [
-        "nome" => "Ourinhos",
-    ],
-    [
-        "nome" => "Pompeia",
-    ];
+    "Marilia",
+    "Bauru",
+    "Jau",
+    "Ourinhos",
+    "Pompeia"
+];
 
-    foreach ($cidade as $cidade) { 
-    echo "Nome: " . $cidade["nome"] . "<br>";
+foreach ($cidades as $cidade) { 
+    echo "Cidade: " . $cidade . "<br>";
     echo "<hr>"; 
-
-
-2.
-
-$aluno = [
-    [
-        "nome" => "Murilo",
-        "idade" => "16",
-        "curso" => "Desenvolvimento de Sistemas"
-    ],
-    [
-        "nome" => "Miguel"
-        "idade" => "16"
-        "curso" => Desenvolvimento de Sistemas" 
-    ];
-
-    foreach ($aluno as $aluno) {
-    echo "Nome: " . $aluno["nome"] . "<br>";
-    echo "Idade: " . $aluno["idade"] . "<br>";
-    echo "Curso: " . $aluno["curso"] "<br>";
 }
 
-3.
 
-$produto = [
+
+AULA 02 - EXERCICIO 2: Aluno
+
+
+$aluno = [
+    "nome" => "Murilo",
+    "idade" => 16,
+    "curso" => "Desenvolvimento de Sistemas"
+];
+
+foreach ($aluno as $campo => $valor) {
+    echo $campo . ": " . $valor . "<br>";
+}
+
+
+
+AULA 02 - EXERCICIO 3: Produtos
+
+
+$produtos = [
     [
         "nome" => "Kit talher",
-        "preco" => "49,99",
-        "quantidade" => "15"
+        "preco" => 49.99,
+        "quantidade" => 15
     ],
     [
         "nome" => "Carregador Portatil",
-        "preco" => "29,99",
-        "quantidade" => "10" 
+        "preco" => 29.99,
+        "quantidade" => 10 
     ],
     [
         "nome" => "Geladeira Eletrolux",
-        "preco" => "1499,99",
-        "quantidade" => "5"
-    ];
+        "preco" => 1499.99,
+        "quantidade" => 5
+    ]
+];
 
-    foreach ($produto as $produto) {
+foreach ($produtos as $produto) {
     echo "Nome: " . $produto["nome"] . "<br>";
-    echo "Idade: " . $produto["preco"] . "<br>";
-    echo "Curso: " . $produto["quantidade"] "<br>";
+    echo "Preco: " . $produto["preco"] . "<br>";
+    echo "Quantidade: " . $produto["quantidade"] . "<br>";
+    echo "<hr>";
 }
 
-Exercicios - Aula 03
 
-1. Organizar as pastas permite uma navegação melhor entre o projeto e deixa mais limpo visualmente
 
-3. A pasta data guarda o arquivo data.php onde ele guarda os dados dos clientes, alunos, produtos, etc.
-A pasta includes guarda arquivos como header.php, footer.php onde é para INCLUIR nos codigos e organizar melhor, são codigos inclusos que são separados do index.php para melhor organização.
-A pasta pages, guarda arquivos como dashboard.php, que simplificando ela serve pra guardar as outras paginas do projeto.
+AULA 03 - EXERCICIO 1: Organizacao de pastas
 
-Exercicios - Aula 04
 
-1.
+
+Organizar as pastas permite uma navegacao melhor entre o projeto 
+e deixa mais limpo visualmente.
+
+
+
+
+AULA 03 - EXERCICIO 3: Funcao das pastas
+
+
+
+A pasta data guarda o arquivo dados.php onde ele guarda os dados 
+dos clientes, alunos, produtos, etc.
+
+A pasta includes guarda arquivos como header.php, footer.php onde 
+é para INCLUIR nos codigos e organizar melhor, sao codigos 
+inclusos que sao separados do index.php para melhor organizacao.
+
+A pasta pages guarda arquivos como dashboard.php, que simplificando 
+ela serve pra guardar as outras paginas do projeto.
