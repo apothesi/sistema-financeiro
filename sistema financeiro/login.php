@@ -6,17 +6,14 @@ $erro = "";
 
 if ($_POST) {
     foreach ($usuarios as $user) {
-        if (
-            $_POST["usuario"] == $user["usuario"] &&
-            $_POST["senha"] == $user["senha"]
-        ) {
+        if ($_POST["usuario"] == $user["usuario"] && $_POST["senha"] == $user["senha"]) {
             $_SESSION["usuario"] = $user["usuario"];
             $_SESSION["perfil"] = $user["perfil"];
             header("Location: pages/dashboard.php");
             exit;
         }
     }
-    $erro = "Usuário ou senha inválidos!";
+    $erro = "Usuario ou senha invalidos!";
 }
 ?>
 
@@ -33,7 +30,7 @@ if ($_POST) {
             
             <form method="post">
                 <div class="mb-3">
-                    <label class="form-label">Usuário</label>
+                    <label class="form-label">Usuario</label>
                     <input type="text" name="usuario" class="form-control" required>
                 </div>
                 <div class="mb-3">
